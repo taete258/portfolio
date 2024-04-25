@@ -8,7 +8,7 @@ export default function Navbar() {
   const theme = useThemeStore((state) => state.theme);
 
   return (
-    <div className="navbar bg-base-100 fixed top-0" data-theme={theme}>
+    <div className="navbar bg-base-100 sticky top-0" data-theme={theme}>
       <div className="flex-1">
         <Link className="btn btn-ghost text-xl" href={"/"}>
           Portfolio
@@ -16,6 +16,9 @@ export default function Navbar() {
       </div>
       <div className="flex-none">
         <ul className="menu menu-horizontal px-1">
+          <li>
+            <Link href="/about-me">About Me</Link>
+          </li>
           <li>
             <Link href="/contacts">Contact</Link>
           </li>

@@ -9,10 +9,12 @@ export default function Layout({ children }: LayoutProps) {
 
   return (
     <main
-      className="flex min-h-screen flex-col items-center justify-between bg-base-100"
+      className="flex h-full w-full flex-col items-center justify-between bg-base-100"
       data-theme={theme}
     >
-      {<Suspense>{children}</Suspense>}
+      <div className="flex flex-1 max-w-4xl p-8">
+        {<Suspense>{children}</Suspense>}
+      </div>
     </main>
   );
 }

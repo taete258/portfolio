@@ -18,9 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={inter.className} style={{ overscrollBehaviorY: "none" }}>
         <Navbar />
-        {children}
+        <div className="h-[calc(100dvh-68px)] w-full">{children}</div>
       </body>
     </html>
   );
