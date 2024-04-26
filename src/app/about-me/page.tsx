@@ -9,12 +9,14 @@ import {
   SiGithub,
   SiGraphql,
   SiHtml5,
+  SiJavascript,
   SiJira,
   SiNextdotjs,
   SiNodedotjs,
   SiPostman,
   SiReact,
   SiTailwindcss,
+  SiTypescript,
 } from "react-icons/si";
 import { TbBrandVscode } from "react-icons/tb";
 
@@ -28,8 +30,12 @@ const skills: SkillCardProps[] = [
     name: "CSS",
   },
   {
-    icon: <IoLogoJavascript />,
+    icon: <SiJavascript />,
     name: "JavaScript",
+  },
+  {
+    icon: <SiTypescript />,
+    name: "TypeScript",
   },
   {
     icon: <SiReact />,
