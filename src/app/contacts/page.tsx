@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { FaEnvelope, FaLinkedin, FaPhone } from "react-icons/fa6";
+import profile from "@images/profile-self.jpg";
 
 export default function Page() {
   return (
@@ -14,7 +15,7 @@ export default function Page() {
             <Image
               alt="profile-image"
               className="mask mask-circle"
-              src="https://picsum.photos/300/300"
+              src={profile}
               width={150}
               height={150}
             />
