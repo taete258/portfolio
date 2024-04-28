@@ -2,6 +2,7 @@
 import Image from "next/image";
 import undawnSvg from "@images/undraw_programming.svg";
 import { TypeAnimation } from "react-type-animation";
+import Link from "next/link";
 export default function Page() {
   return (
     <div className="w-full h-full flex  flex-col justify-center">
@@ -19,7 +20,9 @@ export default function Page() {
           </p>
 
           <p className="text-2xl md:text-4xl">Web and Mobile Developer</p>
-          <button className="btn btn-primary mt-6">Get Started</button>
+          <Link href={"/about-me"} className="btn btn-primary mt-6">
+            About Me
+          </Link>
         </div>
         <Image
           priority
