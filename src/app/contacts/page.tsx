@@ -7,17 +7,17 @@ import profile from "@images/profile-self.jpg";
 export default function Page() {
   return (
     <div className="w-full h-full flex  flex-col justify-center space-y-4">
-      <div className="flex md:flex-row flex-col gap-6 w-full space-x-4 rounded-2xl px-4 py-2 sm:p-10 items-center justify-center">
+      <div className="flex md:flex-row flex-col gap-6 w-full space-x-4 rounded-2xl  py-2 sm:p-10 items-center justify-center">
         <h1 className="text-5xl font-bold">Contacts</h1>
 
-        <div className="avatar min-w-[150px]">
-          <div className="w-36 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+        <div className="min-w-[150px]">
+          <div className="w-36 rounded-full overflow-visible border-2 border-primary p-1">
             <Image
               alt="profile-image"
-              className="mask mask-circle"
               src={profile}
               width={150}
               height={150}
+              className="rounded-full"
             />
           </div>
         </div>

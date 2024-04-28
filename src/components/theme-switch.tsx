@@ -1,11 +1,15 @@
 // "use client";
 import useThemeStore, { THEME_TYPES } from "@/stores/useThemeStore";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { PiMoonBold, PiSunBold } from "react-icons/pi";
 
-export default function ThemeSwitch() {
+const ThemeSwitch: React.FC = () => {
   const toggleTheme = useThemeStore((state) => state.toggleTheme);
   const theme = useThemeStore((state) => state.theme);
+
+  useEffect(() => {
+    console.log("current theme:", theme);
+  }, [theme]);
   return (
     <label className="swap swap-rotate">
       {theme}
@@ -15,10 +19,7 @@ export default function ThemeSwitch() {
         className="theme-controller"
         defaultChecked={true}
         value="synthwave"
-        onChange={(e) => {
-          console.log(e.target.checked);
-          toggleTheme();
-        }}
+        onChange={toggleTheme}
       />
       {/* moon icon */}
       <PiMoonBold className="swap-on fill-current w-5 h-5" />
@@ -26,4 +27,6 @@ export default function ThemeSwitch() {
       <PiSunBold className="swap-off fill-current w-5 h-5" />
     </label>
   );
-}
+};
+
+export default React.memo(ThemeSwitch);
