@@ -14,7 +14,7 @@ const SkillCard: React.FC<SkillCardProps> = ({ icon, name }) => {
         "btn btn-outline border-2 w-full p-4 h-28 cursor-default"
       )}
     >
-      <div className="m-auto text-[40px]">{icon}</div>
+      <div className="m-auto text-[40px] text-primary">{icon}</div>
       <p className="min-w-20">{name}</p>
     </div>
   );
