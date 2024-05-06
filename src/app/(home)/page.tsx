@@ -20,7 +20,11 @@ export default function Page() {
           </p>
 
           <p className="text-2xl md:text-4xl">Web and Mobile Developer</p>
-          <Link href={"/about-me"} className="btn btn-primary mt-6">
+          <Link href={"/about-me"} className="btn btn-primary mt-6 text-white">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span>
+            </span>
             About Me
           </Link>
         </div>

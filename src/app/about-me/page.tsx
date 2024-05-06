@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import SkillSection from "./_components/skills-section";
 import ToolsSection from "./_components/tools-section";
+import WorkExperienceSection from "./_components/work-experience-section";
 
 export default function Page() {
   return (
@@ -36,6 +37,9 @@ export default function Page() {
           </Link>
         </p>
       </div>
+
+      {/* experience */}
+      <WorkExperienceSection />
 
       {/* Skills Section */}
       <SkillSection />
