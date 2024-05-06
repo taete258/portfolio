@@ -1,91 +1,7 @@
-import SkillCard, { SkillCardProps } from "@/components/skill-card";
 import Link from "next/link";
 import React from "react";
-import { IoLogoJavascript } from "react-icons/io5";
-import {
-  SiBitbucket,
-  SiCss3,
-  SiGit,
-  SiGithub,
-  SiGraphql,
-  SiHtml5,
-  SiJavascript,
-  SiJira,
-  SiNextdotjs,
-  SiNodedotjs,
-  SiPostman,
-  SiReact,
-  SiTailwindcss,
-  SiTypescript,
-} from "react-icons/si";
-import { TbBrandVscode } from "react-icons/tb";
-
-const skills: SkillCardProps[] = [
-  {
-    icon: <SiHtml5 />,
-    name: "HTML",
-  },
-  {
-    icon: <SiCss3 />,
-    name: "CSS",
-  },
-  {
-    icon: <SiJavascript />,
-    name: "JavaScript",
-  },
-  {
-    icon: <SiTypescript />,
-    name: "TypeScript",
-  },
-  {
-    icon: <SiReact />,
-    name: "React JS",
-  },
-  {
-    icon: <SiReact />,
-    name: "React Native",
-  },
-  {
-    icon: <SiNodedotjs />,
-    name: "Node JS",
-  },
-  { icon: <SiNextdotjs />, name: "Next JS" },
-  {
-    icon: <SiTailwindcss />,
-    name: "Tailwind CSS",
-  },
-  {
-    icon: <SiGraphql />,
-    name: "GraphQL",
-  },
-];
-
-const tools: SkillCardProps[] = [
-  {
-    icon: <SiGit />,
-    name: "Git",
-  },
-  {
-    icon: <SiGithub />,
-    name: "GitHub",
-  },
-  {
-    icon: <SiBitbucket />,
-    name: "Bitbucket",
-  },
-  {
-    icon: <SiJira />,
-    name: "Jira",
-  },
-  {
-    icon: <TbBrandVscode />,
-    name: "VS Code",
-  },
-  {
-    icon: <SiPostman />,
-    name: "Postman",
-  },
-];
+import SkillSection from "./_components/skills-section";
+import ToolsSection from "./_components/tools-section";
 
 export default function Page() {
   return (
@@ -122,30 +38,10 @@ export default function Page() {
       </div>
 
       {/* Skills Section */}
-      <div className="space-y-6">
-        <h1 className="text-5xl font-bold">Skills</h1>
-
-        <div className="grid grid-cols-3 gap-3 md:grid-cols-4 md:gap-6">
-          {skills.map((item, i) => (
-            <React.Fragment key={i}>
-              <SkillCard {...item} />
-            </React.Fragment>
-          ))}
-        </div>
-      </div>
+      <SkillSection />
 
       {/* Tools */}
-      <div className="space-y-6">
-        <h1 className="text-5xl font-bold">Tools</h1>
-
-        <div className="grid grid-cols-3 gap-3 md:grid-cols-4 md:gap-6">
-          {tools.map((item, i) => (
-            <React.Fragment key={i}>
-              <SkillCard {...item} />
-            </React.Fragment>
-          ))}
-        </div>
-      </div>
+      <ToolsSection />
     </div>
   );
 }
