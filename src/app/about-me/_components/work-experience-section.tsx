@@ -1,6 +1,4 @@
 import React from "react";
-import { FaDotCircle } from "react-icons/fa";
-import { FaCircle, FaCircleDot } from "react-icons/fa6";
 
 type ExperiencesType = {
   date: string;
@@ -9,7 +7,6 @@ type ExperiencesType = {
   description: string;
   tools: string;
   role: string;
-  position: "start" | "end";
   project: string[];
 };
 
@@ -19,7 +16,8 @@ const experiences: ExperiencesType[] = [
     jobType: "Full Time",
     title: "Gofive Co., Ltd.",
     role: "Front-End Developer",
-    description: `II collaborate with teams to develop modern web applications, leveraging the latest technologies to enhance user interfaces and deliver superior user experiences.`,
+    description:
+      "I collaborate with teams to develop modern web applications, leveraging the latest technologies to enhance user interfaces and deliver superior user experiences.",
     project: [
       "Assets Tracking System (A system used to search, track and display details of various devices within the company's warehouse)",
       "Visitor Management (A system used to record the visit history of external individuals for business negotiations with the company)",
@@ -28,7 +26,6 @@ const experiences: ExperiencesType[] = [
       "etaxGo (An electronic tax filing system that provides services for preparing, delivering, and storing data accurately according to the Revenue Department's criteria)",
     ],
     tools: "Angular ,React.js ,TypeScript ,Bootstrap ,Bitbucket ,Jira",
-    position: "start",
   },
   {
     date: "MAR 2022 - NOW",
@@ -40,7 +37,6 @@ const experiences: ExperiencesType[] = [
     project: ["Super Resume", "Jobtopgun", "Jobtopgun Mobile Application"],
     tools:
       "Next.js ,React Native ,Tailwind CSS, TypeScript ,Postman ,Bitbucket ,Jira",
-    position: "end",
   },
 ];
 
@@ -50,7 +46,7 @@ const WorkExperienceSection: React.FC = () => {
       <h1 className="text-5xl font-bold">Work Experiences</h1>
       {experiences.map((exp, index) => (
         <div key={index} className="mb-4 sm:mb-0">
-          <div className={`timeline-${exp.position}  mb-10`}>
+          <div className={`mb-10`}>
             <p className="font-mono italic">{exp.date}</p>
             <div className="text-lg text-primary font-bold">{exp.title}</div>
 
