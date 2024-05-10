@@ -23,7 +23,7 @@ const Navbar: React.FC = () => {
     }
   }, [minWidthMatches, handlers, opened]);
   return (
-    <div className="navbar bg-base-100 sticky top-0" data-theme={theme}>
+    <div className="navbar bg-base-100 sticky top-0 z-50" data-theme={theme}>
       <div className="flex-1">
         <Link className="btn btn-ghost text-xl hidden sm:flex" href={"/"}>
           Ratchanon Pheungta

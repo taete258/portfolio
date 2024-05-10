@@ -3,9 +3,11 @@ import Image from "next/image";
 import undawnSvg from "@images/undraw_programming.svg";
 import { TypeAnimation } from "react-type-animation";
 import Link from "next/link";
+import MiniProjectSection from "./_component/mini-project-section";
+
 export default function Page() {
   return (
-    <div className="w-full h-full flex  flex-col justify-center">
+    <div className="w-full h-full flex  flex-col justify-center space-y-10">
       <div className="flex flex-row flex-wrap-reverse items-center justify-center">
         <div className="sm:min-w-[450px]">
           <TypeAnimation
@@ -28,13 +30,15 @@ export default function Page() {
             About Me
           </Link>
         </div>
+
         <Image
           priority
           src={undawnSvg}
           alt="Programmer"
-          className="w-full max-w-[450px] object-contain my-10"
+          className="relative w-full max-w-[450px] object-contain "
         />
       </div>
+      <MiniProjectSection />
     </div>
   );
 }
