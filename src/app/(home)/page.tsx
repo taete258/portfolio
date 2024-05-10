@@ -8,7 +8,7 @@ import MiniProjectSection from "./_component/mini-project-section";
 export default function Page() {
   return (
     <div className="w-full h-full flex  flex-col justify-center space-y-10">
-      <div className="flex flex-row flex-wrap-reverse items-center justify-center">
+      <div className="flex flex-row flex-wrap-reverse items-center justify-center  sm:min-h-[350px] my-10 px-8">
         <div className="sm:min-w-[450px]">
           <TypeAnimation
             sequence={["Hello There!", 1000]}
@@ -35,10 +35,12 @@ export default function Page() {
           priority
           src={undawnSvg}
           alt="Programmer"
-          className="relative w-full max-w-[450px] object-contain "
+          className="relative w-full max-w-[450px] object-contain filter drop-shadow-lg "
         />
       </div>
-      <MiniProjectSection />
+      <div className="flex bg-base-200 w-full px-8">
+        <MiniProjectSection />
+      </div>
     </div>
   );
 }

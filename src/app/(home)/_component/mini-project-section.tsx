@@ -3,10 +3,10 @@ import React from "react";
 
 const MiniProjectSection: React.FC = () => {
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 max-w-7xl mx-auto my-10">
       <h1 className="text-5xl font-bold">My Mini Projects</h1>
       <div className="flex flex-row flex-wrap items-center justify-around w-full gap-6">
-        <div className="card bg-base-100 shadow-xl carousel-item w-[270px] sm:mr-1">
+        <div className="card bg-base-100 shadow-lg carousel-item w-[270px] sm:mr-1">
           <figure>
             <Image
               src="https://picsum.photos/seed/picsum/400/300"
@@ -25,7 +25,7 @@ const MiniProjectSection: React.FC = () => {
           </div>
         </div>
 
-        <div className="card bg-base-100 shadow-xl carousel-item w-[270px] sm:mr-1">
+        <div className="card bg-base-100 shadow-lg carousel-item w-[270px] sm:mr-1">
           <figure>
             <Image
               src="https://picsum.photos/seed/picsum/400/300"
@@ -44,7 +44,7 @@ const MiniProjectSection: React.FC = () => {
           </div>
         </div>
 
-        <div className="card bg-base-100 shadow-xl carousel-item w-[270px] sm:mr-1">
+        <div className="card bg-base-100 shadow-lg carousel-item w-[270px] sm:mr-1">
           <figure>
             <Image
               src="https://picsum.photos/seed/picsum/400/300"

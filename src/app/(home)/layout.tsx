@@ -12,9 +12,7 @@ export default function Layout({ children }: LayoutProps) {
       className="flex h-auto w-full flex-col items-center justify-between bg-base-100"
       data-theme={theme}
     >
-      <div className="flex flex-1 max-w-7xl p-8">
-        {<Suspense>{children}</Suspense>}
-      </div>
+      <Suspense>{children}</Suspense>
     </main>
   );
 }
