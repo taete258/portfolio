@@ -8,10 +8,12 @@ import Image from "next/image";
 import profile from "@images/profile-self.jpg";
 import { useMediaQuery } from "@mantine/hooks";
 import { useDisclosure } from "@mantine/hooks";
+import { usePathname } from "next/navigation";
 const Navbar: React.FC = () => {
   const theme = useThemeStore((state) => state.theme);
   const minWidthMatches = useMediaQuery("(min-width: 640px)");
   const [opened, handlers] = useDisclosure(false);
+  const pathName = usePathname();
 
   const handleClickDrawerMenu = useCallback(() => {
     handlers.close();
@@ -73,17 +75,35 @@ const Navbar: React.FC = () => {
               <div className="divider divider-primary" />
               {/* Sidebar content here */}
               <li>
-                <Link href="/" onClick={handleClickDrawerMenu}>
+                <Link
+                  href="/"
+                  onClick={handleClickDrawerMenu}
+                  className={`${
+                    pathName === "/" ? "text-primary underline" : ""
+                  }`}
+                >
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/about-me" onClick={handleClickDrawerMenu}>
+                <Link
+                  href="/about-me"
+                  onClick={handleClickDrawerMenu}
+                  className={`${
+                    pathName === "/about-me" ? "text-primary underline" : ""
+                  }`}
+                >
                   About Me
                 </Link>
               </li>
               <li>
-                <Link href="/contacts" onClick={handleClickDrawerMenu}>
+                <Link
+                  href="/contacts"
+                  onClick={handleClickDrawerMenu}
+                  className={`${
+                    pathName === "/contacts" ? "text-primary underline" : ""
+                  }`}
+                >
                   Contact
                 </Link>
               </li>
@@ -94,13 +114,32 @@ const Navbar: React.FC = () => {
       <div className="flex-none">
         <ul className="menu menu-horizontal px-1">
           <li className="hidden sm:flex">
-            <Link href="/">Home</Link>
+            <Link
+              href="/"
+              className={`${pathName === "/" ? "text-primary underline" : ""}`}
+            >
+              Home
+            </Link>
           </li>
           <li className="hidden sm:flex">
-            <Link href="/about-me">About Me</Link>
+            <Link
+              href="/about-me"
+              className={`${
+                pathName === "/about-me" ? "text-primary underline" : ""
+              }`}
+            >
+              About Me
+            </Link>
           </li>
           <li className="hidden sm:flex">
-            <Link href="/contacts">Contact</Link>
+            <Link
+              href="/contacts"
+              className={`${
+                pathName === "/contacts" ? "text-primary underline" : ""
+              }`}
+            >
+              Contact
+            </Link>
           </li>
           <li>
             <ThemeSwitch />
