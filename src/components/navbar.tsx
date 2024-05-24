@@ -9,6 +9,7 @@ import profile from "@images/profile-self.jpg";
 import { useMediaQuery } from "@mantine/hooks";
 import { useDisclosure } from "@mantine/hooks";
 import { usePathname } from "next/navigation";
+import { SiGithub } from "react-icons/si";
 const Navbar: React.FC = () => {
   const theme = useThemeStore((state) => state.theme);
   const minWidthMatches = useMediaQuery("(min-width: 640px)");
@@ -139,6 +140,11 @@ const Navbar: React.FC = () => {
               }`}
             >
               Contact
+            </Link>
+          </li>
+          <li>
+            <Link href={"https://github.com/taete258"} target="_blank">
+              <SiGithub size={22} />
             </Link>
           </li>
           <li>
