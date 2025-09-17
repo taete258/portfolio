@@ -1,5 +1,4 @@
-import create from "zustand";
-import { persist } from "zustand/middleware";
+import { create } from "zustand";
 export enum THEME_TYPES {
     THEME_DARK = "dark",
     THEME_LIGHT = "light",
