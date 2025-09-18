@@ -25,7 +25,7 @@ export default function LocaleSwitcher() {
   };
 
   return (
-    <div className="absolute bottom-8 right-8 flex items-center space-x-2 rounded-full bg-gray-900/50 p-1 border hover:border-primary bg-secondary">
+    <div className="fixed bottom-8 right-8 flex items-center space-x-2 rounded-full bg-gray-900/50 p-1 border hover:border-primary bg-secondary">
       {languages.map((lang) => (
         <button
           key={lang.code}
