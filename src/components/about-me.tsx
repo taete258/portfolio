@@ -60,7 +60,7 @@ const AboutMe = async () => {
               <h3 className="text-xl font-semibold mb-4">
                 {t("about.contactsTitle")}
               </h3>
-              <div className="flex gap-4">
+              <div className="flex gap-4 justify-center items-center lg:justify-start">
                 {contacts.map((item) => (
                   <Button
                     key={item.href}
