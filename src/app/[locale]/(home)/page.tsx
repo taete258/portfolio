@@ -1,5 +1,4 @@
-import LocaleSwitcher from "@/components/locale-switcher";
-import Navbar from "@/components/navbar";
+import AboutMe from "@/components/about-me";
 import { getTranslations } from "next-intl/server";
 
 type PageProps = {
@@ -10,9 +9,9 @@ export default async function Page({ params }: PageProps) {
   const t = await getTranslations({ locale, namespace: "Index" });
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
+      <AboutMe />
       {/* <Hero />
-        <About />
+        
         <Projects />
         <Contact /> */}
 

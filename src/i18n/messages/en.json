@@ -8,5 +8,11 @@
     "contact": "Contact",
     "resume": "Resume"
   },
+  "about": {
+    "title": "About Me",
+    "titleHighlight": "Full Stack Developer",
+    "description1": "I'm a full-stack developer with a true passion for building things for the web. What really drives me, though, is a deep sense of curiosity and a love for continuous learning. I enjoy diving into the full stack—from crafting intuitive user interfaces on the front-end to architecting robust and scalable systems on the back-end. For me, constantly learning new technologies isn't just a hobby; it's how I ensure that every project I touch is modern, effective, and built to the best of my ability.",
+    "contactsTitle": "Contacts"
+  },
   "Index": { "title": "Hello world!" }
 }
