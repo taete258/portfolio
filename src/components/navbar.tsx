@@ -12,7 +12,6 @@ const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { label: t("nav.home"), section: "home" },
     { label: t("nav.about"), section: "about" },
     { label: t("nav.skills"), section: "skills" },
     { label: t("nav.experience"), section: "experience" },
