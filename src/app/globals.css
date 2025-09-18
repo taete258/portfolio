@@ -6,38 +6,38 @@
 @layer base {
   :root {
     /* Portfolio Design System */
-    --background: 240 20% 10%;
+    --background: 180 10% 10%;
     --foreground: 0 0% 98%;
 
-    --card: 240 10% 3.9%;
+    --card: 180 5% 8%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 240 5% 6%;
+    --popover: 180 5% 6%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 263 70% 50%;
+    --primary: 181 80% 45%;
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 240 5% 6%;
+    --secondary: 180 5% 6%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 240 5% 6%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted: 180 5% 6%;
+    --muted-foreground: 180 5% 65%;
 
-    --accent: 142 71% 45%;
+    --accent: 160 70% 45%;
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 5% 11%;
-    --input: 240 5% 11%;
-    --ring: 263 70% 50%;
+    --border: 180 5% 11%;
+    --input: 180 5% 11%;
+    --ring: 181 80% 45%;
 
     /* Portfolio specific tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(263 70% 50%), hsl(142 71% 45%));
-    --gradient-secondary: linear-gradient(135deg, hsl(240 10% 3.9%), hsl(240 5% 6%));
-    --shadow-glow: 0 0 40px hsl(263 70% 50% / 0.3);
+    --gradient-primary: linear-gradient(135deg, hsl(181 80% 45%), hsl(160 70% 45%));
+    --gradient-secondary: linear-gradient(135deg, hsl(180 5% 8%), hsl(180 5% 6%));
+    --shadow-glow: 0 0 40px hsl(181 80% 45% / 0.3);
     --shadow-card: 0 10px 30px -10px hsl(0 0% 0% / 0.3);
     
     --radius: 0.75rem;
