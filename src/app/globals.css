@@ -89,3 +89,7 @@
     @apply border-primary/50;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}

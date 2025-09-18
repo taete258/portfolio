@@ -2,36 +2,67 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useRouter } from "@/i18n/routing";
 import { Button } from "./ui/button";
+import { motion } from "framer-motion";
 
 const Navigation = () => {
   const t = useTranslations();
-  const router = useRouter();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+  const [active, setActive] = useState("#about");
   const navItems = [
-    { label: t("nav.about"), section: "about" },
-    { label: t("nav.skills"), section: "skills" },
-    { label: t("nav.experience"), section: "experience" },
-    { label: t("nav.projects"), section: "projects" },
-    { label: t("nav.contact"), section: "contact" },
+    { label: t("nav.about"), href: "#about" },
+    { label: t("nav.skills"), href: "#skills" },
+    { label: t("nav.experience"), href: "#experience" },
+    { label: t("nav.projects"), href: "#projects" },
+    { label: t("nav.contact"), href: "#contact" },
   ];
 
-  const handleNavItemClick = (section: string) => {
-    setIsMobileMenuOpen(false);
-    router.replace({ pathname: "/", query: { section: section } });
+  const handleNavItemClick = (
+    e: React.MouseEvent<HTMLButtonElement>,
+    href: string
+  ) => {
+    e.preventDefault();
+    setActive(href);
+    if (isMobileMenuOpen) {
+      setIsMobileMenuOpen(false);
+    }
+    const element = document.querySelector(href);
+
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
   };
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+
+      const sections = navItems.map((item) =>
+        document.querySelector(item.href)
+      );
+      const scrollPosition = window.scrollY + 100;
+
+      for (const section of sections) {
+        if (
+          section &&
+          scrollPosition >= (section as HTMLElement).offsetTop &&
+          scrollPosition <
+            (section as HTMLElement).offsetTop +
+              (section as HTMLElement).offsetHeight
+        ) {
+          setActive(`#${section.id}`);
+          break;
+        }
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [navItems]);
 
   return (
     <nav
@@ -53,10 +84,21 @@ const Navigation = () => {
                 key={item.label}
                 variant="link"
                 size="lg"
-                className="text-foreground/80 hover:text-foreground transition-colors"
-                onClick={() => handleNavItemClick(item.section)}
+                className={`relative transition-colors hover:text-foreground ${
+                  active === item.href
+                    ? "text-foreground font-semibold"
+                    : "text-foreground/80"
+                }`}
+                onClick={(e) => handleNavItemClick(e, item.href)}
               >
                 {item.label}
+                {active === item.href && (
+                  <motion.span
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
+                    layoutId="underline"
+                    transition={{ duration: 0.3 }}
+                  />
+                )}
               </Button>
             ))}
           </div>
@@ -67,7 +109,7 @@ const Navigation = () => {
               variant="outline"
               size="lg"
               className="border-primary/50 hover:bg-primary/10"
-              onClick={() => handleNavItemClick("resume")}
+              onClick={(e) => handleNavItemClick(e, "#resume")}
             >
               {t("nav.resume")}
             </Button>
@@ -97,8 +139,12 @@ const Navigation = () => {
                   key={item.label}
                   variant="ghost"
                   size="lg"
-                  className="text-foreground/80 hover:text-foreground transition-colors px-2"
-                  onClick={() => handleNavItemClick(item.section)}
+                  className={`transition-colors hover:text-foreground px-2 justify-start ${
+                    active === item.href
+                      ? "text-foreground font-semibold bg-accent"
+                      : "text-foreground/80"
+                  }`}
+                  onClick={(e) => handleNavItemClick(e, item.href)}
                 >
                   {item.label}
                 </Button>
@@ -108,7 +154,7 @@ const Navigation = () => {
                   variant="outline"
                   size="lg"
                   className="border-primary/50 hover:bg-primary/10 self-start"
-                  onClick={() => handleNavItemClick("resume")}
+                  onClick={(e) => handleNavItemClick(e, "#resume")}
                 >
                   {t("nav.resume")}
                 </Button>
