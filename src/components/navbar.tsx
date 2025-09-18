@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/routing";
-import { Button } from "./button";
+import { Button } from "./ui/button";
 
 const Navigation = () => {
   const t = useTranslations();
@@ -66,7 +66,7 @@ const Navigation = () => {
           <div className="hidden md:flex items-center gap-4">
             <Button
               variant="outline"
-              size="sm"
+              size="lg"
               className="border-primary/50 hover:bg-primary/10"
               onClick={() => handleNavItemClick("resume")}
             >
@@ -107,7 +107,7 @@ const Navigation = () => {
               <div className="flex items-center gap-4">
                 <Button
                   variant="outline"
-                  size="sm"
+                  size="lg"
                   className="border-primary/50 hover:bg-primary/10 self-start"
                   onClick={() => handleNavItemClick("resume")}
                 >
