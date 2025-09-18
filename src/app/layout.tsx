@@ -1,22 +1,13 @@
-import { redirect, routing } from "@/i18n/routing";
-import { hasLocale } from "next-intl";
 import { ReactNode } from "react";
+import "./globals.css";
 
 type RootLayoutProps = {
   readonly children: ReactNode;
-  params: Promise<{ locale?: string }>;
 };
 
-export default async function RootLayout({
-  children,
-  params,
-}: RootLayoutProps) {
-  const { locale } = await params;
-  if (!hasLocale(routing.locales, locale)) {
-    redirect({ href: "/", locale: routing.defaultLocale });
-  }
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html>
+    <html className="dark">
       <body>{children}</body>
     </html>
   );

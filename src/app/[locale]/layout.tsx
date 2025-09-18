@@ -2,8 +2,7 @@ import { Metadata } from "next";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
-import LocaleSwitcher from "@/components/LocaleSwitcher";
-import { redirect, routing } from "@/i18n/routing";
+import { routing } from "@/i18n/routing";
 
 export const metadata: Metadata = {
   title: "Ratchanon Pheungta - Full Stack Developer",
@@ -30,7 +29,6 @@ export default async function LocaleLayout({
   const messages = await getMessages({ locale });
   return (
     <NextIntlClientProvider messages={messages}>
-      <LocaleSwitcher />
       {children}
     </NextIntlClientProvider>
   );

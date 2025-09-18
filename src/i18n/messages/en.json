@@ -1,1 +1,12 @@
-{ "Index": { "title": "Hello world!" } }
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "experience": "Experience",
+    "contact": "Contact",
+    "resume": "Resume"
+  },
+  "Index": { "title": "Hello world!" }
+}
