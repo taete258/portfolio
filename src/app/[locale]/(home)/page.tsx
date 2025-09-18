@@ -1,11 +1,19 @@
 import AboutMe from "@/components/about-me";
-import Projects from "@/components/projects";
-import Skills from "@/components/skills";
 import { getTranslations } from "next-intl/server";
+import dynamic from "next/dynamic";
 
 type PageProps = {
   params: Promise<{ locale: string }>;
 };
+
+const Skills = dynamic(() => import("@/components/skills"), {
+  ssr: true,
+});
+
+const Projects = dynamic(() => import("@/components/projects"), {
+  ssr: true,
+});
+
 export default async function Page({ params }: PageProps) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Index" });

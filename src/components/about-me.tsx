@@ -81,7 +81,7 @@ const AboutMe = async () => {
           </div>
 
           {/* Image placeholder */}
-          <div className="relative">
+          <div className="relative animate-fade-in animate-duration-1000">
             <div className="aspect-square rounded-3xl border border-border/50 flex items-center justify-center card-glow">
               <Image
                 src={"/images/profile-self.jpg"}

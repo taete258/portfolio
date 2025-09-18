@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Menu, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Button } from "./ui/button";
@@ -10,13 +10,16 @@ const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [active, setActive] = useState("#about");
-  const navItems = [
-    { label: t("nav.about"), href: "#about" },
-    { label: t("nav.skills"), href: "#skills" },
-    { label: t("nav.experience"), href: "#experience" },
-    { label: t("nav.projects"), href: "#projects" },
-    { label: t("nav.contact"), href: "#contact" },
-  ];
+  const navItems = useMemo(
+    () => [
+      { label: t("nav.about"), href: "#about" },
+      { label: t("nav.skills"), href: "#skills" },
+      { label: t("nav.experience"), href: "#experience" },
+      { label: t("nav.projects"), href: "#projects" },
+      { label: t("nav.contact"), href: "#contact" },
+    ],
+    [t]
+  );
 
   const handleNavItemClick = (
     e: React.MouseEvent<HTMLButtonElement>,
