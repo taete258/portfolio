@@ -10,6 +10,7 @@ export default function layout({ children }: LayoutProps) {
     <div className="">
       <Navbar />
       {children}
+      <LocaleSwitcher />
     </div>
   );
 }
