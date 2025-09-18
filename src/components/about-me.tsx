@@ -32,7 +32,10 @@ const AboutMe = async () => {
   ];
 
   return (
-    <section id="about" className="py-20 px-6 bg-black/20">
+    <section
+      id="about"
+      className="flex flex-col justify-center py-20 px-6 min-h-screen"
+    >
       <div className="container mx-auto max-w-6xl">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text content */}
