@@ -1,6 +1,8 @@
+"use client";
 import * as React from "react";
-import { motion, type HTMLMotionProps } from "framer-motion";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/cn";
+import Link from "next/link";
 
 const buttonVariants = {
   base: "hover:cursor-pointer inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm text-foreground font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
@@ -27,15 +29,37 @@ const buttonVariants = {
   },
 };
 
-export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps
+  extends React.ComponentPropsWithoutRef<typeof motion.button> {
   variant?: keyof (typeof buttonVariants)["variants"]["variant"];
   size?: keyof (typeof buttonVariants)["variants"]["size"];
+  href?: string;
+  target?: string;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = "default", size = "default", ...props }, ref) => {
-    return (
-      <button
+  (
+    {
+      className,
+      variant = "default",
+      size = "default",
+      href,
+      target,
+      ...props
+    },
+    ref
+  ) => {
+    const motionProps = React.useMemo(
+      () => ({
+        whileHover: {
+          scale: 1.05,
+        },
+      }),
+      []
+    );
+
+    const buttonElement = (
+      <motion.button
         className={cn(
           buttonVariants.base,
           buttonVariants.variants.variant[variant],
@@ -44,8 +68,19 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         )}
         ref={ref}
         {...props}
+        {...motionProps}
       />
     );
+
+    if (href) {
+      return (
+        <Link href={href} {...{ target }} passHref>
+          {buttonElement}
+        </Link>
+      );
+    }
+
+    return buttonElement;
   }
 );
 Button.displayName = "Button";
