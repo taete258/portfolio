@@ -24,11 +24,7 @@ const Education = () => {
     >
       <div className="max-w-6xl mx-auto w-auto p-0">
         <div className="text-4xl font-bold text-center mb-16 text-foreground">
-          <TypingAnimation
-            text={t("education.title")}
-            highlight={true}
-            highlightText={t("education.title")}
-          />
+          <h2 className="font-bold gradient-text">{t("education.title")}</h2>
         </div>
 
         <div className="relative max-w-3xl mx-auto">
