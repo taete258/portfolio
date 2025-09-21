@@ -46,6 +46,7 @@ const AboutMe = async () => {
               className="text-2xl"
               duration={0.8}
               text={locale === "th" ? "รัชนนนท์ เพิ่มตา" : "Ratchanon Pheungta"}
+              locale={locale}
             />
             <TypingAnimation
               text={"Full Stack Developer"}
@@ -58,6 +59,7 @@ const AboutMe = async () => {
               direction="down"
               duration={0.8}
               text={t("about.description1")}
+              locale={locale}
             />
 
             {/* Contacts */}

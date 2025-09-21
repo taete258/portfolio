@@ -20,6 +20,7 @@ export default {
     extend: {
       fontFamily: {
         openSans: ["var(--font-open-sans)", "sans-serif"],
+        thai: ["Noto Sans Thai", "Sarabun", "Kanit", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

@@ -9,6 +9,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
   className?: string;
   direction?: "left" | "right" | "up" | "down";
   duration?: number;
+  locale?: string;
 }
 
 const TextSlideAnimation = ({
@@ -16,6 +17,7 @@ const TextSlideAnimation = ({
   className,
   direction = "left",
   duration = 1.5,
+  locale,
 }: Props) => {
   const containerVariants = {
     hidden: {
@@ -33,12 +35,26 @@ const TextSlideAnimation = ({
     },
   };
 
+  // Thai-specific styling
+  const isThaiText = locale === "th" || /[\u0E00-\u0E7F]/.test(text);
+  const thaiStyles = isThaiText ? "font-thai leading-relaxed break-words" : "";
+
   return (
     <motion.div
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className={cn("text-xl font-bold", className)}
+      className={cn("text-xl font-bold", thaiStyles, className)}
+      style={
+        isThaiText
+          ? {
+              fontFamily: '"Noto Sans Thai", "Sarabun", "Kanit", sans-serif',
+              lineHeight: "1.6",
+              wordBreak: "break-word",
+              overflowWrap: "break-word",
+            }
+          : undefined
+      }
     >
       {text}
     </motion.div>
