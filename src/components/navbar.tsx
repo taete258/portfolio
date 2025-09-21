@@ -6,6 +6,7 @@ import { Button } from "./ui/button";
 import { motion } from "framer-motion";
 import { getActiveSection } from "@/lib/scroll-utils";
 import { useNavigationStore } from "@/stores/navigation-store";
+import LocaleSwitcher from "./locale-switcher";
 
 const Navigation = () => {
   const t = useTranslations();
@@ -100,16 +101,8 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-4">
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-primary/50 hover:bg-primary/10"
-              onClick={(e) => handleNavItemClick(e, "#resume")}
-            >
-              {t("nav.resume")}
-            </Button>
+            <LocaleSwitcher />
           </div>
 
           {/* Mobile Menu Button */}
@@ -129,7 +122,7 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-border/50 bg-background/95 backdrop-blur-sm">
+          <div className="lg:hidden p-5 rounded-3xl border  border-primary  bg-background/95 backdrop-blur-sm animate-slide-down">
             <div className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <Button
@@ -146,15 +139,8 @@ const Navigation = () => {
                   {item.label}
                 </Button>
               ))}
-              <div className="flex items-center gap-4">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-primary/50 hover:bg-primary/10 self-start"
-                  onClick={(e) => handleNavItemClick(e, "#resume")}
-                >
-                  {t("nav.resume")}
-                </Button>
+              <div className="flex items-center justify-center gap-4 border-t border-primary pt-4">
+                <LocaleSwitcher />
               </div>
             </div>
           </div>

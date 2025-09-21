@@ -12,7 +12,6 @@ export default function layout({ children }: LayoutProps) {
       <Navbar />
       {children}
       <Footer />
-      <LocaleSwitcher />
     </div>
   );
 }

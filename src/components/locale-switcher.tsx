@@ -5,6 +5,12 @@ import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/routing";
 import { useTransition } from "react";
 import clsx from "clsx";
+import React from "react";
+import { cn } from "@/lib/utils";
+
+interface LocaleSwitcherProps {
+  className?: string;
+}
 
 // Data for our languages
 const languages = [
@@ -12,7 +18,7 @@ const languages = [
   { code: "th", name: "ไทย" },
 ];
 
-export default function LocaleSwitcher() {
+const LocaleSwitcher = ({ className }: LocaleSwitcherProps) => {
   const router = useRouter();
   const pathname = usePathname();
   const locale = useLocale();
@@ -25,7 +31,12 @@ export default function LocaleSwitcher() {
   };
 
   return (
-    <div className="fixed bottom-8 right-8 flex items-center space-x-2 rounded-full bg-gray-900/50 p-1 border hover:border-primary bg-secondary">
+    <div
+      className={cn(
+        "flex items-center space-x-2 rounded-full bg-gray-900/50 p-1 border hover:border-primary bg-secondary",
+        className
+      )}
+    >
       {languages.map((lang) => (
         <button
           key={lang.code}
@@ -50,4 +61,6 @@ export default function LocaleSwitcher() {
       ))}
     </div>
   );
-}
+};
+
+export default React.memo(LocaleSwitcher);
