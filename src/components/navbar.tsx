@@ -3,7 +3,7 @@ import { useCallback, useEffect, useMemo } from "react";
 import { Menu, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Button } from "./ui/button";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { getActiveSection } from "@/lib/scroll-utils";
 import { useNavigationStore } from "@/stores/navigation-store";
 import LocaleSwitcher from "./locale-switcher";
@@ -40,6 +40,10 @@ const Navigation = () => {
   ) => {
     e.preventDefault();
     navigateToSection(href);
+    // Close mobile menu when navigating
+    if (isMobileMenuOpen) {
+      setIsMobileMenuOpen(false);
+    }
   };
 
   const handleScroll = useCallback(() => {
@@ -121,30 +125,97 @@ const Navigation = () => {
         </div>
 
         {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <div className="lg:hidden p-5 rounded-3xl border  border-primary  bg-background/95 backdrop-blur-sm animate-slide-down">
-            <div className="flex flex-col space-y-4">
-              {navItems.map((item) => (
-                <Button
-                  key={item.label}
-                  variant="ghost"
-                  size="lg"
-                  className={`transition-colors hover:text-foreground px-2 justify-start ${
-                    activeTab === item.href
-                      ? "text-foreground font-semibold bg-accent"
-                      : "text-foreground/80"
-                  }`}
-                  onClick={(e) => handleNavItemClick(e, item.href)}
+        <AnimatePresence mode="wait">
+          {isMobileMenuOpen && (
+            <motion.div
+              key="mobile-menu"
+              initial={{ opacity: 0, y: -20, scale: 0.95 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                transition: {
+                  duration: 0.3,
+                  ease: "easeOut",
+                },
+              }}
+              exit={{
+                opacity: 0,
+                y: -20,
+                scale: 0.95,
+                transition: {
+                  duration: 0.2,
+                  ease: "easeIn",
+                },
+              }}
+              className="lg:hidden p-5 rounded-3xl border border-primary bg-background/95 backdrop-blur-sm"
+            >
+              <motion.div
+                className="flex flex-col space-y-4"
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: 1,
+                  transition: {
+                    delay: 0.1,
+                    duration: 0.2,
+                  },
+                }}
+                exit={{ opacity: 0 }}
+              >
+                {navItems.map((item, index) => (
+                  <motion.div
+                    key={item.label}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{
+                      opacity: 1,
+                      x: 0,
+                      transition: {
+                        delay: 0.1 + index * 0.05,
+                        duration: 0.3,
+                      },
+                    }}
+                    exit={{
+                      opacity: 0,
+                      x: -20,
+                      transition: {
+                        delay: (navItems.length - index) * 0.03,
+                        duration: 0.2,
+                      },
+                    }}
+                  >
+                    <Button
+                      variant="ghost"
+                      size="lg"
+                      className={`transition-colors hover:text-foreground px-2 justify-start w-full ${
+                        activeTab === item.href
+                          ? "text-foreground font-semibold bg-accent"
+                          : "text-foreground/80"
+                      }`}
+                      onClick={(e) => handleNavItemClick(e, item.href)}
+                    >
+                      {item.label}
+                    </Button>
+                  </motion.div>
+                ))}
+                <motion.div
+                  className="flex items-center justify-center gap-4 border-t border-primary pt-4"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      delay: 0.3,
+                      duration: 0.3,
+                    },
+                  }}
+                  exit={{ opacity: 0, y: 10 }}
                 >
-                  {item.label}
-                </Button>
-              ))}
-              <div className="flex items-center justify-center gap-4 border-t border-primary pt-4">
-                <LocaleSwitcher />
-              </div>
-            </div>
-          </div>
-        )}
+                  <LocaleSwitcher />
+                </motion.div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   );
