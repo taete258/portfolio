@@ -9,10 +9,17 @@ type PageProps = {
 
 const Skills = dynamic(() => import("@/components/skills"), {
   ssr: true,
+  loading: () => <div>Loading...</div>,
 });
 
 const Projects = dynamic(() => import("@/components/projects"), {
   ssr: true,
+  loading: () => <div>Loading...</div>,
+});
+
+const Education = dynamic(() => import("@/components/education"), {
+  ssr: true,
+  loading: () => <div>Loading...</div>,
 });
 
 export default async function Page({ params }: PageProps) {
@@ -31,6 +38,8 @@ export default async function Page({ params }: PageProps) {
       <AboutMe />
       <Skills />
       <Projects />
+      <Education />
+
       {/* <Hero />
         
   

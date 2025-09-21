@@ -4,6 +4,7 @@
     "projects": "Projects",
     "skills": "Skills",
     "experience": "Experience",
+    "education": "Education",
     "contact": "Contact",
     "resume": "Resume"
   },
@@ -12,6 +13,17 @@
     "titleHighlight": "Full Stack Developer",
     "description1": "I'm a full-stack developer with a true passion for building things for the web. What really drives me, though, is a deep sense of curiosity and a love for continuous learning. I enjoy diving into the full stack—from crafting intuitive user interfaces on the front-end to architecting robust and scalable systems on the back-end. For me, constantly learning new technologies isn't just a hobby; it's how I ensure that every project I touch is modern, effective, and built to the best of my ability.",
     "contactsTitle": "Contacts"
+  },
+  "education": {
+    "title": "Education",
+    "history": [
+      {
+        "school": "Burapha University",
+        "degree": "Bachelor degree of Science in Software Engineering",
+        "period": "2016 - 2019",
+        "gpa": "3.46"
+      }
+    ]
   },
   "Index": { "title": "Hello world!" }
 }
