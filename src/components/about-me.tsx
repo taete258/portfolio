@@ -89,8 +89,8 @@ const AboutMe = async () => {
                 alt="Profile ratchanon pheungta"
                 className="rounded-3xl card-glow mx-auto"
                 priority
-                width={600}
-                height={500}
+                width={450}
+                height={350}
               />
               {/* Decorative elements */}
               <div className="absolute top-3 -left-6 w-44 h-44 rounded-full bg-primary/70 animate-float card-glow " />
