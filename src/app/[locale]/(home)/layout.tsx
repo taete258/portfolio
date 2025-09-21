@@ -1,6 +1,6 @@
 import Footer from "@/components/footer";
-import LocaleSwitcher from "@/components/locale-switcher";
 import Navbar from "@/components/navbar";
+import { ScrollToTop } from "@/components/ui/scroll-to-top";
 import React from "react";
 
 type LayoutProps = {
@@ -12,6 +12,7 @@ export default function layout({ children }: LayoutProps) {
       <Navbar />
       {children}
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }
