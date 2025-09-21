@@ -34,9 +34,9 @@ const AboutMe = async () => {
   return (
     <section
       id="about"
-      className="flex flex-col justify-center py-20 px-6 min-h-screen"
+      className="flex flex-col justify-center py-20 px-6 min-h-[100dvh]"
     >
-      <div className="container mx-auto max-w-6xl">
+      <div className="max-w-6xl mx-auto w-auto p-0">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text content */}
           <div className="animate-slide-up space-y-4">

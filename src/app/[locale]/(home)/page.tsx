@@ -18,7 +18,7 @@ export default async function Page({ params }: PageProps) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Index" });
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-[100dvh] min-w-[100dvw]  bg-background px-0 sm:px-6 ">
       <AboutMe />
       <Skills />
       <Projects />
