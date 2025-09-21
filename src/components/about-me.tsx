@@ -70,7 +70,7 @@ const AboutMe = async () => {
                   <Button
                     key={item.href}
                     variant="outline"
-                    className="border-primary/50 hover:bg-primary/10"
+                    className="border-primary/50 hover:bg-primary/10 w-14 h-14 lg:w-auto lg:h-auto p-2 lg:p-4"
                     size="lg"
                     href={item.href}
                     target={item.target}
@@ -88,15 +88,15 @@ const AboutMe = async () => {
               <Image
                 src={profileImage}
                 alt="Profile ratchanon pheungta"
-                className="rounded-3xl card-glow mx-auto"
+                className="rounded-3xl card-glow mx-auto w-64 h-48 md:w-96 md:h-72 lg:w-[450px] lg:h-[350px] object-cover"
                 priority
                 width={450}
                 height={350}
               />
               {/* Decorative elements */}
-              <div className="absolute top-3 -left-6 w-44 h-44 rounded-full bg-primary/70 animate-float card-glow " />
-              <div className="absolute -top-4 -right-4 w-24 h-24 rounded-full bg-accent/70 animate-float card-glow " />
-              <div className="absolute -bottom-3 -left-3 w-16 h-16 rounded-full bg-accent/70 animate-float card-glow " />
+              <div className="absolute top-0 -left-1 w-20 h-20 md:w-44 md:h-44 rounded-full bg-primary/70 animate-float card-glow " />
+              <div className="absolute -top-2 right-3 w-16 h-16 md:w-24 md:h-24 rounded-full bg-accent/70 animate-float card-glow " />
+              <div className="absolute bottom-2 left-6 w-11 h-11 md:w-16 md:h-16 rounded-full bg-accent/70 animate-float card-glow " />
             </div>
           </div>
         </div>
