@@ -45,7 +45,7 @@ const AboutMe = async () => {
             <TextSlideAnimation
               className="text-2xl"
               duration={0.8}
-              text={locale === "th" ? "รัชนนนท์ เพิ่มตา" : "Ratchanon Pheungta"}
+              text={locale === "th" ? "รัชนนนท์ พึ่งตา" : "Ratchanon Pheungta"}
               locale={locale}
             />
             <TypingAnimation

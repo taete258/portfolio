@@ -25,5 +25,21 @@
       }
     ]
   },
+  "footer": {
+    "name": "taete258",
+    "role": "นักพัฒนาโปรแกรม",
+    "version": "v2.0",
+    "connectWith": "ติดต่อฉัน",
+    "copyright": "สงวนลิขสิทธิ์",
+    "builtWith": "สร้างด้วย",
+    "using": "โดยใช้ Next.js และ TypeScript",
+    "thankYou": "พอร์ตโฟลิโอนี้แสดงเส้นทางการเป็นนักพัฒนาของฉัน ขอบคุณที่เข้าชม!",
+    "socialLinks": {
+      "github": "GitHub",
+      "email": "อีเมล",
+      "phone": "โทรศัพท์",
+      "linkedin": "LinkedIn"
+    }
+  },
   "Index": { "title": "สวัสดีชาวโลก!" }
 }

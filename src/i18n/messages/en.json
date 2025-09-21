@@ -25,5 +25,21 @@
       }
     ]
   },
+  "footer": {
+    "name": "Taete258",
+    "role": "Full Stack Developer",
+    "version": "v2.0",
+    "connectWith": "Connect with me",
+    "copyright": "All rights reserved",
+    "builtWith": "Built with",
+    "using": "using Next.js & TypeScript",
+    "thankYou": "This portfolio showcases my journey as a developer. Thank you for visiting!",
+    "socialLinks": {
+      "github": "GitHub",
+      "email": "Email",
+      "phone": "Phone",
+      "linkedin": "LinkedIn"
+    }
+  },
   "Index": { "title": "Hello world!" }
 }

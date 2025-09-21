@@ -16,6 +16,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { getActiveSection } from "@/lib/scroll-utils";
 import { useNavigationStore } from "@/stores/navigation-store";
 import LocaleSwitcher from "./locale-switcher";
+import { Link } from "@/i18n/routing";
 
 const Navigation = () => {
   const t = useTranslations();
@@ -92,7 +93,9 @@ const Navigation = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="text-xl font-bold gradient-text">Portfolio</div>
+          <Link href="/" className="text-xl font-bold gradient-text">
+            Taete258
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">

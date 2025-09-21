@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, Phone, Heart } from "lucide-react";
 import { Button } from "./ui/button";
 import { useTranslations } from "next-intl";
-import { div } from "framer-motion/client";
+import { Link } from "@/i18n/routing";
 
 const Footer = () => {
   const t = useTranslations();
@@ -13,25 +13,25 @@ const Footer = () => {
       icons: <Github className="w-4 h-4" />,
       href: "https://github.com/taete258",
       target: "_blank",
-      label: "GitHub",
+      label: t("footer.socialLinks.github"),
     },
     {
       icons: <Mail className="w-4 h-4" />,
       href: "mailto:ratchanon.tpta@gmail.com",
       target: "_blank",
-      label: "Email",
+      label: t("footer.socialLinks.email"),
     },
     {
       icons: <Phone className="w-4 h-4" />,
       href: "tel:+66648482388",
       target: "_self",
-      label: "Phone",
+      label: t("footer.socialLinks.phone"),
     },
     {
       icons: <Linkedin className="w-4 h-4" />,
       href: "https://www.linkedin.com/in/ratchanon-pheungta-6846a9229/",
       target: "_blank",
-      label: "LinkedIn",
+      label: t("footer.socialLinks.linkedin"),
     },
   ];
 
@@ -59,12 +59,18 @@ const Footer = () => {
               viewport={{ once: true }}
               className="text-center md:text-left"
             >
-              <h3 className="text-xl font-bold text-foreground mb-2">
-                Ratchanon Pheungta
-              </h3>
-              <p className="text-muted-foreground mb-2">Full Stack Developer</p>
+              <Link
+                href="https://github.com/taete258"
+                target="_blank"
+                className="text-xl font-bold mb-2 gradient-text"
+              >
+                {t("footer.name")}
+              </Link>
+              <p className="text-muted-foreground mb-2">{t("footer.role")}</p>
               <div className="inline-flex items-center px-3 py-1 bg-primary/10 border border-primary/20 rounded-full">
-                <span className="text-sm font-medium text-primary">v2.0</span>
+                <span className="text-sm font-medium text-primary">
+                  {t("footer.version")}
+                </span>
               </div>
             </motion.div>
 
@@ -76,7 +82,9 @@ const Footer = () => {
               viewport={{ once: true }}
               className="text-center"
             >
-              <p className="text-muted-foreground mb-4">Connect with me</p>
+              <p className="text-muted-foreground mb-4">
+                {t("footer.connectWith")}
+              </p>
               <div className="flex justify-center gap-3">
                 {contacts.map((contact) => (
                   <Button
@@ -103,12 +111,12 @@ const Footer = () => {
               className="text-center md:text-right"
             >
               <p className="text-muted-foreground text-sm mb-2">
-                © {new Date().getFullYear()} All rights reserved
+                © {new Date().getFullYear()} {t("footer.copyright")}
               </p>
               <div className="flex items-center justify-center md:justify-end gap-1 text-sm text-muted-foreground">
-                <span>Built with</span>
+                <span>{t("footer.builtWith")}</span>
                 <Heart className="w-4 h-4 text-red-500 fill-current animate-pulse" />
-                <span>using Next.js & TypeScript</span>
+                <span>{t("footer.using")}</span>
               </div>
             </motion.div>
           </div>
@@ -122,8 +130,7 @@ const Footer = () => {
             className="mt-8 pt-6 border-t border-border/30"
           >
             <p className="text-center text-xs text-muted-foreground">
-              This portfolio showcases my journey as a developer. Thank you for
-              visiting!
+              {t("footer.thankYou")}
             </p>
           </motion.div>
         </div>
