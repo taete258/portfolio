@@ -75,6 +75,12 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [navItems]);
 
+  useEffect(() => {
+    if (activeTab !== "#about") {
+      setIsScrolled(true);
+    }
+  }, []);
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
