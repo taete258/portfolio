@@ -1,15 +1,26 @@
 "use client";
-import { useState, useEffect, useMemo } from "react";
+import { useCallback, useEffect, useMemo } from "react";
 import { Menu, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Button } from "./ui/button";
 import { motion } from "framer-motion";
+import { getActiveSection } from "@/lib/scroll-utils";
+import { useNavigationStore } from "@/stores/navigation-store";
 
 const Navigation = () => {
   const t = useTranslations();
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [active, setActive] = useState("#about");
+
+  // Hydrated navigation state and actions
+  const {
+    activeTab,
+    isMobileMenuOpen,
+    isScrolled,
+    setActiveTab,
+    setIsMobileMenuOpen,
+    setIsScrolled,
+    navigateToSection,
+  } = useNavigationStore();
+
   const navItems = useMemo(
     () => [
       { label: t("nav.about"), href: "#about" },
@@ -26,44 +37,26 @@ const Navigation = () => {
     href: string
   ) => {
     e.preventDefault();
-    setActive(href);
-    if (isMobileMenuOpen) {
-      setIsMobileMenuOpen(false);
-    }
-    const element = document.querySelector(href);
-
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
+    navigateToSection(href);
   };
 
+  const handleScroll = useCallback(() => {
+    const currentScrollY = window.scrollY;
+    // Update scroll state for navbar styling
+    setIsScrolled(currentScrollY > 50);
+
+    // Find active section using optimized function
+    const sections = navItems.map((item) => document.querySelector(item.href));
+
+    const activeSection = getActiveSection(sections, currentScrollY, 100);
+
+    if (activeSection) {
+      setActiveTab(activeSection);
+    }
+  }, [navItems]);
+
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-
-      const sections = navItems.map((item) =>
-        document.querySelector(item.href)
-      );
-      const scrollPosition = window.scrollY + 100;
-
-      for (const section of sections) {
-        if (
-          section &&
-          scrollPosition >= (section as HTMLElement).offsetTop &&
-          scrollPosition <
-            (section as HTMLElement).offsetTop +
-              (section as HTMLElement).offsetHeight
-        ) {
-          setActive(`#${section.id}`);
-          break;
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [navItems]);
 
@@ -88,14 +81,14 @@ const Navigation = () => {
                 variant="link"
                 size="lg"
                 className={`relative transition-colors hover:text-foreground ${
-                  active === item.href
+                  activeTab === item.href
                     ? "text-foreground font-semibold"
                     : "text-foreground/80"
                 }`}
                 onClick={(e) => handleNavItemClick(e, item.href)}
               >
                 {item.label}
-                {active === item.href && (
+                {activeTab === item.href && (
                   <motion.span
                     className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
                     layoutId="underline"
@@ -143,7 +136,7 @@ const Navigation = () => {
                   variant="ghost"
                   size="lg"
                   className={`transition-colors hover:text-foreground px-2 justify-start ${
-                    active === item.href
+                    activeTab === item.href
                       ? "text-foreground font-semibold bg-accent"
                       : "text-foreground/80"
                   }`}
