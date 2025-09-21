@@ -1,4 +1,5 @@
 import AboutMe from "@/components/about-me";
+import { Particles } from "@/components/ui/shadcn-io/particles";
 import { getTranslations } from "next-intl/server";
 import dynamic from "next/dynamic";
 
@@ -18,7 +19,15 @@ export default async function Page({ params }: PageProps) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Index" });
   return (
-    <div className="min-h-[100dvh] min-w-[100dvw]  bg-background px-0 sm:px-6 ">
+    <div className="min-h-[100dvh]  bg-background px-0 sm:px-6 ">
+      <Particles
+        className="absolute inset-0"
+        quantity={100}
+        staticity={30}
+        ease={60}
+        size={1.8}
+        color="accent"
+      />
       <AboutMe />
       <Skills />
       <Projects />

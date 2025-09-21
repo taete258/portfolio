@@ -93,9 +93,9 @@ const AboutMe = async () => {
                 height={500}
               />
               {/* Decorative elements */}
-              <div className="absolute top-3 -left-6 w-44 h-44 rounded-full bg-primary/70 animate-float" />
-              <div className="absolute -top-4 -right-4 w-24 h-24 rounded-full bg-accent/70 animate-float" />
-              <div className="absolute -bottom-3 -left-3 w-16 h-16 rounded-full bg-accent/70 animate-float" />
+              <div className="absolute top-3 -left-6 w-44 h-44 rounded-full bg-primary/70 animate-float card-glow " />
+              <div className="absolute -top-4 -right-4 w-24 h-24 rounded-full bg-accent/70 animate-float card-glow " />
+              <div className="absolute -bottom-3 -left-3 w-16 h-16 rounded-full bg-accent/70 animate-float card-glow " />
             </div>
           </div>
         </div>
