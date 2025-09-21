@@ -5,6 +5,7 @@ import React, { useMemo } from "react";
 import TypingAnimation from "./ui/typing-animation";
 import { useTranslations } from "next-intl";
 import { Badge } from "./ui/badge";
+import WaveDivider from "./ui/wave-divider";
 
 const Education = () => {
   const t = useTranslations();
@@ -19,7 +20,7 @@ const Education = () => {
   return (
     <section
       id="education"
-      className="flex flex-col justify-center py-20 px-6 min-h-[100dvh]"
+      className="relative flex flex-col justify-center py-20 px-6 min-h-[100dvh]"
     >
       <div className="max-w-6xl mx-auto w-auto p-0">
         <div className="text-4xl font-bold text-center mb-16 text-foreground">
@@ -77,6 +78,7 @@ const Education = () => {
           ))}
         </div>
       </div>
+      <WaveDivider nextSectionColor="hsl(var(--secondary) / .2)" />
     </section>
   );
 };

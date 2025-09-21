@@ -1,4 +1,5 @@
 import AboutMe from "@/components/about-me";
+import Footer from "@/components/footer";
 import { Particles } from "@/components/ui/shadcn-io/particles";
 import { getTranslations } from "next-intl/server";
 import dynamic from "next/dynamic";
@@ -26,7 +27,7 @@ export default async function Page({ params }: PageProps) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Index" });
   return (
-    <div className="min-h-[100dvh]  bg-background px-0 sm:px-6 ">
+    <div className="min-h-[100dvh]  bg-background px-0 ">
       <Particles
         className="absolute inset-0"
         quantity={100}
@@ -44,13 +45,6 @@ export default async function Page({ params }: PageProps) {
         
   
         <Contact /> */}
-
-      {/* Footer */}
-      {/* <footer className="border-t border-border/50 py-8 px-6 bg-secondary/20">
-        <div className="container mx-auto text-center text-muted-foreground">
-          <p>{t("title")}</p>
-        </div>
-      </footer> */}
     </div>
   );
 }

@@ -5,6 +5,7 @@ import { Button } from "./ui/button";
 import { Github, Linkedin, Mail, Phone } from "lucide-react";
 import profileImage from "@images/profile-self.jpg";
 import Image from "next/image";
+import WaveDivider from "./ui/wave-divider";
 const AboutMe = async () => {
   const t = await getTranslations();
   const locale = await getLocale();
@@ -35,7 +36,7 @@ const AboutMe = async () => {
   return (
     <section
       id="about"
-      className="flex flex-col justify-center py-20 px-6 min-h-[100dvh]"
+      className="relative flex flex-col justify-center py-20 px-6 min-h-[100dvh]"
     >
       <div className="max-w-6xl mx-auto w-auto p-0">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -100,6 +101,7 @@ const AboutMe = async () => {
           </div>
         </div>
       </div>
+      <WaveDivider nextSectionColor="hsl(164 26% 17%)" />
     </section>
   );
 };
