@@ -1,6 +1,15 @@
 "use client";
 import { useCallback, useEffect, useMemo } from "react";
-import { Menu, X } from "lucide-react";
+import {
+  Menu,
+  X,
+  User,
+  Code,
+  Briefcase,
+  GraduationCap,
+  FolderOpen,
+  Mail,
+} from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Button } from "./ui/button";
 import { motion, AnimatePresence } from "framer-motion";
@@ -24,12 +33,12 @@ const Navigation = () => {
 
   const navItems = useMemo(
     () => [
-      { label: t("nav.about"), href: "#about" },
-      { label: t("nav.skills"), href: "#skills" },
-      { label: t("nav.experience"), href: "#experience" },
-      { label: t("nav.education"), href: "#education" },
-      { label: t("nav.projects"), href: "#projects" },
-      { label: t("nav.contact"), href: "#contact" },
+      { label: t("nav.about"), href: "#about", icon: User },
+      { label: t("nav.skills"), href: "#skills", icon: Code },
+      { label: t("nav.experience"), href: "#experience", icon: Briefcase },
+      { label: t("nav.education"), href: "#education", icon: GraduationCap },
+      { label: t("nav.projects"), href: "#projects", icon: FolderOpen },
+      { label: t("nav.contact"), href: "#contact", icon: Mail },
     ],
     [t]
   );
@@ -193,6 +202,7 @@ const Navigation = () => {
                       }`}
                       onClick={(e) => handleNavItemClick(e, item.href)}
                     >
+                      <item.icon className="w-4 h-4 mr-3" />
                       {item.label}
                     </Button>
                   </motion.div>
