@@ -80,11 +80,6 @@
   }
   
   .card-glow {
-    box-shadow: var(--shadow-card);
-    @apply border border-border/50;
-  }
-  
-  .card-glow:hover {
     box-shadow: var(--shadow-glow);
     @apply border-primary/50;
   }

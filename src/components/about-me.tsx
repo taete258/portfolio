@@ -3,6 +3,7 @@ import TypingAnimation from "./ui/typing-animation";
 import TextSlideAnimation from "./ui/text-slide-animation";
 import { Button } from "./ui/button";
 import { Github, Linkedin, Mail, Phone } from "lucide-react";
+import profileImage from "@images/profile-self.jpg";
 import Image from "next/image";
 const AboutMe = async () => {
   const t = await getTranslations();
@@ -81,20 +82,21 @@ const AboutMe = async () => {
           </div>
 
           {/* Image placeholder */}
-          <div className="relative animate-fade-in animate-duration-1000">
-            <div className="aspect-square rounded-3xl border border-border/50 flex items-center justify-center card-glow">
+          <div className="animate-fade-in animate-duration-1000 max-w-[552px]  m-auto">
+            <div className="relative rounded-2xl box-content">
               <Image
-                src={"/images/profile-self.jpg"}
+                src={profileImage}
                 alt="Profile ratchanon pheungta"
-                className="overflow-hidden rounded-3xl"
-                fill
+                className="rounded-3xl card-glow mx-auto"
+                priority
+                width={600}
+                height={500}
               />
+              {/* Decorative elements */}
+              <div className="absolute top-3 -left-6 w-44 h-44 rounded-full bg-primary/70 animate-float" />
+              <div className="absolute -top-4 -right-4 w-24 h-24 rounded-full bg-accent/70 animate-float" />
+              <div className="absolute -bottom-3 -left-3 w-16 h-16 rounded-full bg-accent/70 animate-float" />
             </div>
-
-            {/* Decorative elements */}
-            <div className="absolute top-3 -left-6 w-44 h-44 rounded-full bg-primary/70 animate-float" />
-            <div className="absolute -top-4 -right-4 w-24 h-24 rounded-full bg-accent/70 animate-float" />
-            <div className="absolute -bottom-3 -left-3 w-16 h-16 rounded-full bg-accent/70 animate-float" />
           </div>
         </div>
       </div>
