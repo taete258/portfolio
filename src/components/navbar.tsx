@@ -103,7 +103,7 @@ const Navigation = () => {
               <Button
                 key={item.label}
                 variant="link"
-                size="lg"
+                size="default"
                 className={`relative transition-colors hover:text-foreground ${
                   activeTab === item.href
                     ? "text-foreground font-semibold"
