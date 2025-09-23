@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronUp } from "lucide-react";
 import { Button } from "./button";
+import { useNavigationStore } from "@/stores/navigation-store";
 
 interface ScrollToTopProps {
   threshold?: number;
@@ -17,6 +18,7 @@ export const ScrollToTop = ({
   position = "bottom-right",
 }: ScrollToTopProps) => {
   const [isVisible, setIsVisible] = useState(false);
+  const { activeTab } = useNavigationStore();
 
   // Show/hide button based on scroll position
   useEffect(() => {
@@ -63,6 +65,12 @@ export const ScrollToTop = ({
         return "bottom-8 right-8";
     }
   };
+
+  useEffect(() => {
+    if (activeTab !== "#about") {
+      setIsVisible(true);
+    }
+  }, []);
 
   return (
     <AnimatePresence>
