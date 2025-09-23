@@ -23,7 +23,7 @@ const Skills = async () => {
           {t("skills.description")}
         </p>
       </div>
-      <WaveDivider nextSectionColor="hsl(180 50% 15%)" />
+      <WaveDivider nextSectionColor="hsl(180 50% 18%)" />
     </section>
   );
 };

@@ -92,7 +92,7 @@ const Education = () => {
           ))}
         </div>
       </div>
-      <WaveDivider nextSectionColor="hsl(var(--secondary))" />
+      <WaveDivider nextSectionColor="hsl(180 50% 15%)" />
     </section>
   );
 };

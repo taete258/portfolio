@@ -35,9 +35,9 @@ export default async function Page({ params }: PageProps) {
     <div className="min-h-[100dvh]  bg-background px-0 ">
       <AboutMe />
       <Skills />
-      <Projects />
       <Experience />
       <Education />
+      <Projects />
 
       {/* <Hero />
         

@@ -116,7 +116,7 @@ const Projects = async () => {
           </div>
         ))}
       </div>
-      <WaveDivider nextSectionColor="hsl(180 50% 18%)" />
+      <WaveDivider nextSectionColor="hsl(var(--secondary))" />
     </section>
   );
 };
