@@ -16,12 +16,14 @@
   },
   "education": {
     "title": "Education",
+    "description": "My academic journey and educational background that shaped my development skills and knowledge foundation.",
     "history": [
       {
         "school": "Burapha University",
         "degree": "Bachelor degree of Science in Software Engineering",
         "period": "2016 - 2019",
-        "gpa": "3.46 GPA"
+        "gpa": "3.46 GPA",
+        "description": "Focused on software development, algorithms, data structures, and system design. Gained comprehensive knowledge in programming languages and web technologies. Completed projects in database management, software engineering principles, and mobile application development."
       }
     ]
   },

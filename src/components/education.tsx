@@ -15,6 +15,7 @@ const Education = () => {
       degree: string;
       period: string;
       gpa: string;
+      description: string;
     }>;
   }, []);
   return (
@@ -23,8 +24,13 @@ const Education = () => {
       className="relative flex flex-col justify-center py-20 px-6 min-h-[100dvh]"
     >
       <div className="max-w-6xl mx-auto w-auto p-0">
-        <div className="text-4xl font-bold text-center mb-16 text-foreground">
-          <h2 className="font-bold gradient-text">{t("education.title")}</h2>
+        <div className="text-center mb-16 animate-fade-in">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
+            {t("education.title")}
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            {t("education.description")}
+          </p>
         </div>
 
         <div className="relative max-w-3xl mx-auto">
@@ -49,24 +55,33 @@ const Education = () => {
                       <School className="text-background" size={20} />
                     </div>
 
-                    <center className="pt-4 space-y-3">
-                      <h3 className="text-xl font-bold mt-1 text-foreground">
-                        {item.degree}
-                      </h3>
-                      <p className="text-muted-foreground mt-1 !text-lg text-primary">
-                        {item.school} <Dot className="inline-block" size={36} />{" "}
-                        {item.period}
-                      </p>
+                    <div className="pt-4 space-y-4">
+                      <center className="space-y-3">
+                        <h3 className="text-xl font-bold mt-1 text-foreground">
+                          {item.degree}
+                        </h3>
+                        <p className="text-muted-foreground mt-1 !text-lg text-primary">
+                          {item.school}{" "}
+                          <Dot className="inline-block" size={36} />{" "}
+                          {item.period}
+                        </p>
 
-                      <Badge
-                        variant="outline"
-                        shape="square"
-                        className="bg-foreground text-background text-lg rounded-2xl"
-                      >
-                        <Star className="inline-block mx-2" size={20} />
-                        {item.gpa}
-                      </Badge>
-                    </center>
+                        <Badge
+                          variant="outline"
+                          shape="square"
+                          className="bg-foreground text-background text-lg rounded-2xl"
+                        >
+                          <Star className="inline-block mx-2" size={20} />
+                          {item.gpa}
+                        </Badge>
+                      </center>
+
+                      <div className="mt-4 pt-4 border-t border-primary/20">
+                        <p className="text-muted-foreground text-sm leading-relaxed text-center">
+                          {item.description}
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
