@@ -27,6 +27,44 @@
       }
     ]
   },
+  "experience": {
+    "title": "ประสบการณ์",
+    "titleHighlight": "การทำงาน",
+    "description": "เส้นทางการทำงานและประสบการณ์ในด้านการพัฒนาซอฟต์แวร์และเทคโนโลยี",
+    "history": [
+      {
+        "company": "นักพัฒนาอิสระ",
+        "position": "Full Stack Developer",
+        "period": "2563 - ปัจจุบัน",
+        "type": "อิสระ",
+        "description": "พัฒนาเว็บแอปพลิเคชันและแอปมือถือให้กับลูกค้าหลากหลาย เชี่ยวชาญใน React, Next.js, React Native และเทคโนโลยีเว็บสมัยใหม่ ส่งมอบโซลูชันคุณภาพสูงให้กับอุตสาหกรรมต่างๆ รวมถึงอีคอมเมิร์ซ การศึกษา และการจัดการธุรกิจ",
+        "technologies": [
+          "React",
+          "Next.js",
+          "React Native",
+          "TypeScript",
+          "Node.js",
+          "MongoDB",
+          "PostgreSQL"
+        ]
+      },
+      {
+        "company": "โปรเจกต์ส่วนตัว",
+        "position": "นักพัฒนาอิสระ",
+        "period": "2562 - ปัจจุบัน",
+        "type": "ส่วนตัว",
+        "description": "สร้างโปรเจกต์ส่วนตัวอย่างต่อเนื่องเพื่อเรียนรู้เทคโนโลยีใหม่และพัฒนาทักษะการพัฒนา มุ่งเน้นการสร้างแอปพลิเคชันที่แก้ปัญหาในชีวิตจริงและแสดงแนวทางการพัฒนาสมัยใหม่",
+        "technologies": [
+          "Next.js",
+          "React Native",
+          "TypeScript",
+          "Tailwind CSS",
+          "Framer Motion",
+          "API Integration"
+        ]
+      }
+    ]
+  },
   "footer": {
     "name": "taete258",
     "role": "นักพัฒนาโปรแกรม",

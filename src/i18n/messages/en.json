@@ -27,6 +27,44 @@
       }
     ]
   },
+  "experience": {
+    "title": "Professional",
+    "titleHighlight": "Experience",
+    "description": "My professional journey and work experience in software development and technology.",
+    "history": [
+      {
+        "company": "Freelance Developer",
+        "position": "Full Stack Developer",
+        "period": "2020 - Present",
+        "type": "Freelance",
+        "description": "Developed various web applications and mobile apps for clients. Specialized in React, Next.js, React Native, and modern web technologies. Delivered high-quality solutions for different industries including e-commerce, education, and business management.",
+        "technologies": [
+          "React",
+          "Next.js",
+          "React Native",
+          "TypeScript",
+          "Node.js",
+          "MongoDB",
+          "PostgreSQL"
+        ]
+      },
+      {
+        "company": "Personal Projects",
+        "position": "Independent Developer",
+        "period": "2019 - Present",
+        "type": "Personal",
+        "description": "Continuously building personal projects to learn new technologies and improve development skills. Focus on creating practical applications that solve real-world problems and showcase modern development practices.",
+        "technologies": [
+          "Next.js",
+          "React Native",
+          "TypeScript",
+          "Tailwind CSS",
+          "Framer Motion",
+          "API Integration"
+        ]
+      }
+    ]
+  },
   "footer": {
     "name": "Taete258",
     "role": "Full Stack Developer",

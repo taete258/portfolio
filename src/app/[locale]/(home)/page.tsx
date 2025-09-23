@@ -18,6 +18,11 @@ const Projects = dynamic(() => import("@/components/projects"), {
   loading: () => <div>Loading...</div>,
 });
 
+const Experience = dynamic(() => import("@/components/experience"), {
+  ssr: true,
+  loading: () => <div>Loading...</div>,
+});
+
 const Education = dynamic(() => import("@/components/education"), {
   ssr: true,
   loading: () => <div>Loading...</div>,
@@ -31,6 +36,7 @@ export default async function Page({ params }: PageProps) {
       <AboutMe />
       <Skills />
       <Projects />
+      <Experience />
       <Education />
 
       {/* <Hero />
