@@ -120,19 +120,6 @@ const Footer = () => {
               </div>
             </motion.div>
           </div>
-
-          {/* Bottom divider with additional fade animation */}
-          <motion.div
-            initial={{ opacity: 0, scaleX: 0 }}
-            whileInView={{ opacity: 1, scaleX: 1 }}
-            transition={{ duration: 1, delay: 0.8 }}
-            viewport={{ once: true }}
-            className="mt-8 pt-6 border-t border-border/30"
-          >
-            <p className="text-center text-xs text-muted-foreground">
-              {t("footer.thankYou")}
-            </p>
-          </motion.div>
         </div>
       </motion.footer>
     </div>
