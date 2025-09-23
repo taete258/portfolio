@@ -7,13 +7,13 @@ const Skills = () => {
       id="skills"
       className="relative flex flex-col justify-center py-24 px-6 min-h-[100dvh]"
       style={{
-        backgroundColor: "hsl(164 26% 17%)",
+        backgroundColor: "hsl(180 50% 24%)",
       }}
     >
       <div className="max-w-6xl mx-auto w-auto p-0">
         <h2 className="text-4xl font-bold mb-12">Skills</h2>
       </div>
-      <WaveDivider nextSectionColor="hsl(180 50% 24%)" />
+      <WaveDivider nextSectionColor="hsl(164 26% 17%)" />
     </section>
   );
 };
