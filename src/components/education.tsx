@@ -22,6 +22,9 @@ const Education = () => {
     <section
       id="education"
       className="relative flex flex-col justify-center py-20 px-6 min-h-[100dvh]"
+      style={{
+        backgroundColor: "hsl(180 50% 22%)",
+      }}
     >
       <div className="max-w-6xl mx-auto w-auto p-0">
         <div className="text-center mb-16 animate-fade-in">
@@ -89,7 +92,7 @@ const Education = () => {
           ))}
         </div>
       </div>
-      <WaveDivider nextSectionColor="hsl(var(--secondary) / .2)" />
+      <WaveDivider nextSectionColor="hsl(var(--secondary))" />
     </section>
   );
 };

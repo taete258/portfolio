@@ -38,7 +38,7 @@ const Footer = () => {
   return (
     <div
       style={{
-        backgroundColor: "hsl(var(--secondary) / .2)",
+        backgroundColor: "hsl(var(--secondary))",
       }}
     >
       <motion.footer
@@ -47,7 +47,7 @@ const Footer = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="border-t border-border/50 py-12 px-6 backdrop-blur-sm"
+        className="py-12 px-6"
       >
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8 items-center">

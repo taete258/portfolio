@@ -11,7 +11,7 @@ const Skills = async () => {
       id="skills"
       className="relative flex flex-col justify-center py-24 px-6 min-h-[100dvh]"
       style={{
-        backgroundColor: "hsl(180 50% 24%)",
+        backgroundColor: "hsl(180 50% 12%)",
       }}
     >
       <div className="text-center mb-16 animate-fade-in max-w-6xl mx-auto">
@@ -23,7 +23,7 @@ const Skills = async () => {
           {t("skills.description")}
         </p>
       </div>
-      <WaveDivider nextSectionColor="hsl(164 26% 17%)" />
+      <WaveDivider nextSectionColor="hsl(180 50% 15%)" />
     </section>
   );
 };

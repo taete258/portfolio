@@ -48,7 +48,7 @@ const Projects = async () => {
       id="projects"
       className="relative flex flex-col justify-center py-20 px-6  min-h-[100dvh]"
       style={{
-        backgroundColor: "hsl(164 26% 17%)",
+        backgroundColor: "hsl(180 50% 15%)",
       }}
     >
       <Particles className="absolute inset-0" quantity={150} size={2.8} />
@@ -116,7 +116,7 @@ const Projects = async () => {
           </div>
         ))}
       </div>
-      <WaveDivider nextSectionColor="hsl(180 10% 10%)" />
+      <WaveDivider nextSectionColor="hsl(180 50% 18%)" />
     </section>
   );
 };

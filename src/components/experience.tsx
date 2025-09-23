@@ -24,7 +24,7 @@ const Experience = () => {
       id="experience"
       className="relative flex flex-col justify-center py-20 px-6 min-h-[100dvh]"
       style={{
-        backgroundColor: "hsl(180 5% 8%)",
+        backgroundColor: "hsl(180 50% 18%)",
       }}
     >
       <div className="max-w-6xl mx-auto w-auto p-0">
@@ -111,7 +111,7 @@ const Experience = () => {
           ))}
         </div>
       </div>
-      <WaveDivider nextSectionColor="hsl(180 10% 10%)" />
+      <WaveDivider nextSectionColor="hsl(180 50% 22%)" />
     </section>
   );
 };

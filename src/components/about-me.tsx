@@ -112,7 +112,7 @@ const AboutMe = async () => {
           </div>
         </div>
       </div>
-      <WaveDivider nextSectionColor="hsl(180 50% 24%)" />
+      <WaveDivider nextSectionColor="hsl(180 50% 12%)" />
     </section>
   );
 };
