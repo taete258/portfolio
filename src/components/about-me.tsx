@@ -6,6 +6,7 @@ import { Github, Linkedin, Mail, Phone } from "lucide-react";
 import profileImage from "@images/profile-self.jpg";
 import Image from "next/image";
 import WaveDivider from "./ui/wave-divider";
+import { Particles } from "./ui/shadcn-io/particles";
 const AboutMe = async () => {
   const t = await getTranslations();
   const locale = await getLocale();
@@ -38,6 +39,14 @@ const AboutMe = async () => {
       id="about"
       className="relative flex flex-col justify-center py-20 px-6 min-h-[100dvh]"
     >
+      <Particles
+        className="absolute inset-0"
+        quantity={100}
+        staticity={30}
+        ease={60}
+        size={1.8}
+        color="accent"
+      />
       <div className="max-w-6xl mx-auto w-auto p-0">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text content */}

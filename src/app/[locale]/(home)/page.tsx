@@ -28,14 +28,6 @@ export default async function Page({ params }: PageProps) {
   const t = await getTranslations({ locale, namespace: "Index" });
   return (
     <div className="min-h-[100dvh]  bg-background px-0 ">
-      <Particles
-        className="absolute inset-0"
-        quantity={100}
-        staticity={30}
-        ease={60}
-        size={1.8}
-        color="accent"
-      />
       <AboutMe />
       <Skills />
       <Projects />
