@@ -4,34 +4,43 @@ import { Button } from "./ui/button";
 import { getLocale, getTranslations } from "next-intl/server";
 import { Badge } from "./ui/badge";
 import { ExternalLink, Github } from "lucide-react";
+import { Particles } from "./ui/shadcn-io/particles";
 
 const Projects = async () => {
   const locale = await getLocale();
-  const t = await getTranslations({ locale, namespace: "Index" });
+  const t = await getTranslations({ locale });
   const projects = [
     {
-      title: t("projects.ecommerce.title"),
-      description: t("projects.ecommerce.description"),
-      tech: ["React", "Node.js", "PostgreSQL", "Stripe"],
-      image: "🛍️",
+      title: t("projects.whett.title"),
+      description: t("projects.whett.description"),
+      tech: ["Next.js", "TypeScript", "Tailwind CSS", "Weather API"],
+      image: "🌤️",
+      github: "https://github.com/taete258/whett",
+      website: "https://whett.vercel.app",
     },
     {
-      title: t("projects.taskManagement.title"),
-      description: t("projects.taskManagement.description"),
-      tech: ["Next.js", "TypeScript", "Prisma", "WebSockets"],
-      image: "📋",
+      title: t("projects.catExplorer.title"),
+      description: t("projects.catExplorer.description"),
+      tech: ["React Native", "TypeScript", "Cat API", "Expo"],
+      image: "🐱",
+      github: "https://github.com/taete258/cat-explorer",
+      website: null,
     },
     {
-      title: t("projects.aiContent.title"),
-      description: t("projects.aiContent.description"),
-      tech: ["React", "Python", "OpenAI API", "MongoDB"],
-      image: "🤖",
+      title: t("projects.portfolio.title"),
+      description: t("projects.portfolio.description"),
+      tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      image: "💼",
+      github: null,
+      website: null,
     },
     {
-      title: t("projects.realEstate.title"),
-      description: t("projects.realEstate.description"),
-      tech: ["Vue.js", "Node.js", "MySQL", "AWS"],
-      image: "🏠",
+      title: t("projects.comingSoon.title"),
+      description: t("projects.comingSoon.description"),
+      tech: ["Coming Soon", "Stay Tuned", "More Projects"],
+      image: "🚀",
+      github: null,
+      website: null,
     },
   ];
   return (
@@ -42,21 +51,19 @@ const Projects = async () => {
         backgroundColor: "hsl(164 26% 17%)",
       }}
     >
-      {/* <div className="container mx-auto max-w-6xl">
-        <h2 className="text-4xl font-bold mb-12">Projects</h2>
-      </div> */}
+      <Particles className="absolute inset-0" quantity={150} size={2.8} />
       <div className="text-center mb-16 animate-fade-in">
         <h2 className="text-4xl md:text-5xl font-bold mb-6">
           {t("projects.title")}{" "}
           <span className="gradient-text">{t("projects.titleHighlight")}</span>
         </h2>
-        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+        <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
           {t("projects.description")}
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-8">
-        {projects.map((project, index) => (
+      <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        {projects.map((project) => (
           <div
             key={project.title}
             className="rounded-2xl p-4 card-glow border border-primary hover:scale-[1.02] transition-all bg-card/50 backdrop-blur-sm animate-slide-up"
@@ -66,12 +73,28 @@ const Projects = async () => {
               <div className="flex items-center justify-between mb-4">
                 <div className="text-4xl">{project.image}</div>
                 <div className="flex gap-2">
-                  <Button size="sm" variant="ghost" className="p-2 h-auto">
-                    <Github className="w-4 h-4" />
-                  </Button>
-                  <Button size="sm" variant="ghost" className="p-2 h-auto">
-                    <ExternalLink className="w-4 h-4" />
-                  </Button>
+                  {project.github && (
+                    <Button
+                      size="sm"
+                      variant="ghost"
+                      className="p-2 h-auto"
+                      href={project.github}
+                      target={"_blank"}
+                    >
+                      <Github className="w-4 h-4" />
+                    </Button>
+                  )}
+                  {project.website && (
+                    <Button
+                      size="sm"
+                      variant="ghost"
+                      className="p-2 h-auto"
+                      href={project.website}
+                      target={"_blank"}
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                    </Button>
+                  )}
                 </div>
               </div>
               <p className="text-xl">{project.title}</p>
@@ -92,15 +115,6 @@ const Projects = async () => {
             </div>
           </div>
         ))}
-      </div>
-      <div className="text-center mt-12">
-        <Button
-          variant="outline"
-          size="lg"
-          className="border-primary/50 hover:bg-primary/10"
-        >
-          {t("projects.viewAll")}
-        </Button>
       </div>
       <WaveDivider nextSectionColor="hsl(180 10% 10%)" />
     </section>

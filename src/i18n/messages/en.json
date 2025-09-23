@@ -41,5 +41,31 @@
       "linkedin": "LinkedIn"
     }
   },
+  "projects": {
+    "title": "My Mini",
+    "titleHighlight": "Projects",
+    "description": "Explore some of my mini projects that showcase my development skills and learning journey.",
+    "whett": {
+      "title": "Whett - Weather App",
+      "description": "A web application built with Next.js that allows you to search and display weather data with a clean, responsive interface."
+    },
+    "catExplorer": {
+      "title": "Cat Explorer",
+      "description": "A mobile application built with React Native that displays detailed information about different cat breeds and characteristics."
+    },
+    "portfolio": {
+      "title": "Portfolio Website",
+      "description": "This responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS featuring internationalization and modern animations."
+    },
+    "comingSoon": {
+      "title": "More Projects Coming",
+      "description": "Currently working on more exciting projects that will be showcased here soon. Stay tuned for updates!"
+    }
+  },
+  "skills": {
+    "title": "My",
+    "titleHighlight": "Skills",
+    "description": "Technologies and tools I work with to bring ideas to life."
+  },
   "Index": { "title": "Hello world!" }
 }
