@@ -42,7 +42,7 @@ const Experience = () => {
 
         <div className="relative max-w-4xl mx-auto">
           {/* The vertical timeline bar */}
-          <div className="absolute left-4 sm:left-1/2 -translate-x-1/2 h-full w-0.5 bg-primary/30" />
+          <div className="absolute left-1/2 -translate-x-1/2 h-full w-0.5 bg-primary/30" />
 
           {experienceHistory.map((item, index) => (
             <motion.div
