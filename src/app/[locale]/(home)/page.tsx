@@ -18,6 +18,11 @@ const Projects = dynamic(() => import("@/components/projects"), {
   loading: () => <div>Loading...</div>,
 });
 
+const AiTools = dynamic(() => import("@/components/ai-tools"), {
+  ssr: true,
+  loading: () => <div>Loading...</div>,
+});
+
 const Experience = dynamic(() => import("@/components/experience"), {
   ssr: true,
   loading: () => <div>Loading...</div>,
@@ -35,6 +40,7 @@ export default async function Page({ params }: PageProps) {
     <div className="min-h-[100dvh]  bg-background px-0 ">
       <AboutMe />
       <Skills />
+      <AiTools />
       <Experience />
       <Education />
       <Projects />

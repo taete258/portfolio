@@ -128,7 +128,7 @@ const Skills = () => {
           })}
         </motion.div>
       </div>
-      <WaveDivider nextSectionColor="hsl(180 50% 18%)" />
+      <WaveDivider nextSectionColor="hsl(180 50% 22%)" />
     </section>
   );
 };
