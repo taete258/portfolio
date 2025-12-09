@@ -9,6 +9,7 @@ import {
   GraduationCap,
   FolderOpen,
   Mail,
+  BrainCircuit,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Button } from "./ui/button";
@@ -36,6 +37,7 @@ const Navigation = () => {
     () => [
       { label: t("nav.about"), href: "#about", icon: User },
       { label: t("nav.skills"), href: "#skills", icon: Code },
+      { label: t("nav.aiTools"), href: "#aiTools", icon: BrainCircuit },
       { label: t("nav.experience"), href: "#experience", icon: Briefcase },
       { label: t("nav.education"), href: "#education", icon: GraduationCap },
       { label: t("nav.projects"), href: "#projects", icon: FolderOpen },
@@ -84,11 +86,10 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-background/80 backdrop-blur-md border-b border-border/50"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+        ? "bg-background/80 backdrop-blur-md border-b border-border/50"
+        : "bg-transparent"
+        }`}
     >
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
@@ -104,11 +105,10 @@ const Navigation = () => {
                 key={item.label}
                 variant="link"
                 size="default"
-                className={`relative transition-colors hover:text-foreground ${
-                  activeTab === item.href
-                    ? "text-foreground font-semibold"
-                    : "text-foreground/80"
-                }`}
+                className={`relative transition-colors hover:text-foreground ${activeTab === item.href
+                  ? "text-foreground font-semibold"
+                  : "text-foreground/80"
+                  }`}
                 onClick={(e) => handleNavItemClick(e, item.href)}
               >
                 {item.label}
@@ -204,11 +204,10 @@ const Navigation = () => {
                     <Button
                       variant="ghost"
                       size="lg"
-                      className={`transition-colors hover:text-foreground px-2 justify-start w-full ${
-                        activeTab === item.href
-                          ? "text-foreground font-semibold bg-accent"
-                          : "text-foreground/80"
-                      }`}
+                      className={`transition-colors hover:text-foreground px-2 justify-start w-full ${activeTab === item.href
+                        ? "text-foreground font-semibold bg-accent"
+                        : "text-foreground/80"
+                        }`}
                       onClick={(e) => handleNavItemClick(e, item.href)}
                     >
                       <item.icon className="w-4 h-4 mr-3" />
