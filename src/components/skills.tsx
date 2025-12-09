@@ -2,8 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import WaveDivider from "./ui/wave-divider";
-import { Badge } from "./ui/badge";
-import { getLocale, getTranslations } from "next-intl/server";
+import SkillCard from "./ui/skill-card";
 import {
   SiReact,
   SiNextdotjs,
@@ -85,7 +84,7 @@ const Skills = () => {
           <span className="gradient-text">{t("skills.titleHighlight")}</span>
         </motion.h2>
         <motion.p
-          className="text-xl text-muted-foreground max-w-2xl mx-auto mb-12"
+          className="text-xl text-muted-foreground max-w-md lg:max-w-2xl mx-auto mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -103,27 +102,12 @@ const Skills = () => {
           {Object.keys(skillIcons).map((skill: string, index: number) => {
             const IconComponent = skillIcons[skill as keyof typeof skillIcons];
             return (
-              <motion.div
+              <SkillCard
                 key={skill}
+                skill={skill}
+                IconComponent={IconComponent}
                 variants={itemVariants}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-                className="group"
-              >
-                <div className="flex flex-col items-center justify-center p-6 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-white/10">
-                  <motion.div
-                    className="mb-3"
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                  >
-                    {IconComponent && (
-                      <IconComponent className="w-12 h-12 text-white group-hover:text-blue-400 transition-colors duration-300" />
-                    )}
-                  </motion.div>
-                  <h3 className="text-sm font-medium text-white/90 group-hover:text-white transition-colors duration-300 text-center">
-                    {skill}
-                  </h3>
-                </div>
-              </motion.div>
+              />
             );
           })}
         </motion.div>
