@@ -48,11 +48,11 @@ const AboutMe = async () => {
         color="accent"
       />
       <div className="max-w-6xl mx-auto w-auto p-0">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Text content */}
           <div className="animate-slide-up space-y-4">
             <TextSlideAnimation
-              className="text-2xl"
+              className="text-lg md:text-2xl"
               duration={0.8}
               text={locale === "th" ? "รัชนนนท์ พึ่งตา" : "Ratchanon Pheungta"}
               locale={locale}

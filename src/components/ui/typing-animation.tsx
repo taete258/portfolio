@@ -69,7 +69,7 @@ const TypingAnimation = ({
 
   return (
     <motion.h2
-      className={cn("font-bold text-4xl md:text-5xl", className)}
+      className={cn("font-bold text-2xl sm:text-3xl md:text-5xl", className)}
       variants={containerVariants}
       initial="hidden"
       animate="visible"
