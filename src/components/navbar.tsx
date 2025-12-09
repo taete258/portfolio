@@ -37,7 +37,7 @@ const Navigation = () => {
     () => [
       { label: t("nav.about"), href: "#about", icon: User },
       { label: t("nav.skills"), href: "#skills", icon: Code },
-      { label: t("nav.aiTools"), href: "#aiTools", icon: BrainCircuit },
+      { label: t("nav.aiTools"), href: "#ai-tools", icon: BrainCircuit },
       { label: t("nav.experience"), href: "#experience", icon: Briefcase },
       { label: t("nav.education"), href: "#education", icon: GraduationCap },
       { label: t("nav.projects"), href: "#projects", icon: FolderOpen },
